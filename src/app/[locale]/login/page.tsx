@@ -62,9 +62,9 @@ export default function LoginPage() {
               {loading ? "..." : t("signIn")}
             </Button>
             <p className="text-center text-sm text-muted-foreground">
-              Need to submit a resolution?{" "}
+              {t("needToSubmit")}{" "}
               <Link href={`/${locale}/submit`} className="underline">
-                Start here
+                {t("startHere")}
               </Link>
             </p>
           </form>

@@ -294,7 +294,7 @@ export default function SubmitPage() {
 
             {/* English fields */}
             <div className="space-y-3 rounded-lg border p-4">
-              <h4 className="text-sm font-semibold text-muted-foreground">English</h4>
+              <h4 className="text-sm font-semibold text-muted-foreground">{t("submit.sectionEnglish")}</h4>
               <div className="space-y-1">
                 <Label htmlFor="title_en">{t("resolution.title")}</Label>
                 <Input
@@ -328,7 +328,7 @@ export default function SubmitPage() {
 
             {/* Spanish fields */}
             <div className="space-y-3 rounded-lg border p-4">
-              <h4 className="text-sm font-semibold text-muted-foreground">Español</h4>
+              <h4 className="text-sm font-semibold text-muted-foreground">{t("submit.sectionSpanish")}</h4>
               <div className="space-y-1">
                 <Label htmlFor="title_es">{t("resolution.title")}</Label>
                 <Input
@@ -382,37 +382,37 @@ export default function SubmitPage() {
 
               {titleEn && (
                 <div>
-                  <h4 className="font-semibold text-muted-foreground">Title (EN)</h4>
+                  <h4 className="font-semibold text-muted-foreground">{t("submit.reviewTitleEn")}</h4>
                   <p className="mt-1">{titleEn}</p>
                 </div>
               )}
               {titleEs && (
                 <div>
-                  <h4 className="font-semibold text-muted-foreground">Título (ES)</h4>
+                  <h4 className="font-semibold text-muted-foreground">{t("submit.reviewTitleEs")}</h4>
                   <p className="mt-1">{titleEs}</p>
                 </div>
               )}
               {textEn && (
                 <div>
-                  <h4 className="font-semibold text-muted-foreground">Resolution Text (EN)</h4>
+                  <h4 className="font-semibold text-muted-foreground">{t("submit.reviewTextEn")}</h4>
                   <p className="mt-1 whitespace-pre-wrap">{textEn}</p>
                 </div>
               )}
               {textEs && (
                 <div>
-                  <h4 className="font-semibold text-muted-foreground">Texto (ES)</h4>
+                  <h4 className="font-semibold text-muted-foreground">{t("submit.reviewTextEs")}</h4>
                   <p className="mt-1 whitespace-pre-wrap">{textEs}</p>
                 </div>
               )}
               {rationaleEn && (
                 <div>
-                  <h4 className="font-semibold text-muted-foreground">Rationale (EN)</h4>
+                  <h4 className="font-semibold text-muted-foreground">{t("submit.reviewRationaleEn")}</h4>
                   <p className="mt-1 whitespace-pre-wrap">{rationaleEn}</p>
                 </div>
               )}
               {rationaleEs && (
                 <div>
-                  <h4 className="font-semibold text-muted-foreground">Justificación (ES)</h4>
+                  <h4 className="font-semibold text-muted-foreground">{t("submit.reviewRationaleEs")}</h4>
                   <p className="mt-1 whitespace-pre-wrap">{rationaleEs}</p>
                 </div>
               )}

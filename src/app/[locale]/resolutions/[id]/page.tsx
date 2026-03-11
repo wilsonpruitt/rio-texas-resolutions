@@ -83,6 +83,7 @@ export default function ResolutionDetailPage({
 
   // For recommend / ut-decision actions
   const [notes, setNotes] = useState("");
+  const [confirmingSubmit, setConfirmingSubmit] = useState(false);
 
   const role = (session?.user as { role?: string })?.role;
   const userId = (session?.user as { id?: string })?.id;
@@ -111,7 +112,11 @@ export default function ResolutionDetailPage({
   }, [resolution?.status, role]);
 
   async function handleSubmit() {
-    if (!confirm(t("resolution.confirmSubmit"))) return;
+    if (!confirmingSubmit) {
+      setConfirmingSubmit(true);
+      return;
+    }
+    setConfirmingSubmit(false);
     setActionLoading(true);
     try {
       const res = await fetch(`/api/resolutions/${id}/submit`, { method: "POST" });
@@ -266,15 +271,31 @@ export default function ResolutionDetailPage({
             <ResolutionStatusBadge status={resolution.status as never} />
           </div>
         </div>
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
           {isPetitioner && resolution.status === "DRAFT" && (
             <>
-              <Link href={`/${locale}/resolutions/${id}/edit`}>
-                <Button variant="outline">{t("common.edit")}</Button>
-              </Link>
-              <Button onClick={handleSubmit} disabled={actionLoading}>
-                {t("resolution.submitResolution")}
-              </Button>
+              {confirmingSubmit ? (
+                <>
+                  <span className="text-sm text-muted-foreground">
+                    {t("resolution.confirmSubmit")}
+                  </span>
+                  <Button onClick={handleSubmit} disabled={actionLoading}>
+                    {t("common.confirm")}
+                  </Button>
+                  <Button variant="outline" onClick={() => setConfirmingSubmit(false)}>
+                    {t("common.cancel")}
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Link href={`/${locale}/resolutions/${id}/edit`}>
+                    <Button variant="outline">{t("common.edit")}</Button>
+                  </Link>
+                  <Button onClick={handleSubmit} disabled={actionLoading}>
+                    {t("resolution.submitResolution")}
+                  </Button>
+                </>
+              )}
             </>
           )}
         </div>

@@ -53,7 +53,12 @@ export async function PATCH(
     return NextResponse.json({ error: "Can only update resolutions in DRAFT status" }, { status: 400 });
   }
 
-  const body = await request.json();
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+  }
   const { title_en, title_es, text_en, text_es, rationale_en, rationale_es } = body;
 
   const updated = await prisma.resolution.update({

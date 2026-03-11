@@ -23,16 +23,16 @@ export default function HomePage() {
         {session?.user ? (
           <>
             <Link href={`/${locale}/dashboard`}>
-              <Button size="lg">Go to Dashboard</Button>
+              <Button size="lg">{t("goToDashboard")}</Button>
             </Link>
             <Link href={`/${locale}/submit`}>
-              <Button size="lg" variant="outline">Submit a Resolution</Button>
+              <Button size="lg" variant="outline">{t("submitResolution")}</Button>
             </Link>
           </>
         ) : (
           <>
             <Link href={`/${locale}/submit`}>
-              <Button size="lg">Submit a Resolution</Button>
+              <Button size="lg">{t("submitResolution")}</Button>
             </Link>
             <Link href={`/${locale}/login`}>
               <Button size="lg" variant="outline">{t("signInToSubmit")}</Button>
