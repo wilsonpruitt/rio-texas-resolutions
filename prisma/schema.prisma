@@ -21,6 +21,11 @@ enum Locale {
   ES
 }
 
+enum MemberType {
+  LAY
+  CLERGY
+}
+
 enum ResolutionStatus {
   DRAFT
   SUBMITTED
@@ -39,8 +44,9 @@ model User {
   email           String   @unique
   name            String
   passwordHash    String
-  role            UserRole @default(PETITIONER)
-  preferredLocale Locale   @default(EN)
+  role            UserRole    @default(PETITIONER)
+  preferredLocale Locale      @default(EN)
+  memberType      MemberType?
   church          String?
   createdAt       DateTime @default(now())
 

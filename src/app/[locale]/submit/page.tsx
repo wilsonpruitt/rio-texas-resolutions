@@ -28,6 +28,7 @@ export default function SubmitPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [church, setChurch] = useState("");
+  const [memberType, setMemberType] = useState<"LAY" | "CLERGY" | "">("");
   const [password, setPassword] = useState("");
 
   // Resolution fields
@@ -45,7 +46,7 @@ export default function SubmitPage() {
     const res = await fetch("/api/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, church, password }),
+      body: JSON.stringify({ name, email, church, memberType, password }),
     });
 
     if (!res.ok) {
@@ -263,6 +264,33 @@ export default function SubmitPage() {
                 <Input id="church" value={church} onChange={(e) => setChurch(e.target.value)} required />
               </div>
               <div className="space-y-1">
+                <Label>{t("submit.memberType")}</Label>
+                <div className="flex gap-4 pt-1">
+                  <label className="flex cursor-pointer items-center gap-2 text-sm">
+                    <input
+                      type="radio"
+                      name="memberType"
+                      value="LAY"
+                      checked={memberType === "LAY"}
+                      onChange={() => setMemberType("LAY")}
+                      className="accent-primary"
+                    />
+                    {t("submit.lay")}
+                  </label>
+                  <label className="flex cursor-pointer items-center gap-2 text-sm">
+                    <input
+                      type="radio"
+                      name="memberType"
+                      value="CLERGY"
+                      checked={memberType === "CLERGY"}
+                      onChange={() => setMemberType("CLERGY")}
+                      className="accent-primary"
+                    />
+                    {t("submit.clergy")}
+                  </label>
+                </div>
+              </div>
+              <div className="space-y-1">
                 <Label htmlFor="password">{t("submit.password")}</Label>
                 <Input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
               </div>
@@ -274,7 +302,7 @@ export default function SubmitPage() {
                 <Button variant="outline" onClick={handleSignIn} disabled={loading || !email || !password}>
                   {t("submit.existingAccount")}
                 </Button>
-                <Button onClick={handleRegister} disabled={loading || !name || !email || !church || !password}>
+                <Button onClick={handleRegister} disabled={loading || !name || !email || !church || !memberType || !password}>
                   {loading ? "..." : t("submit.createAndContinue")}
                 </Button>
               </div>

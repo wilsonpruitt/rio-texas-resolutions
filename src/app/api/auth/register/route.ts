@@ -3,9 +3,9 @@ import { hash } from "bcryptjs";
 import { prisma } from "@/lib/prisma";
 
 export async function POST(req: NextRequest) {
-  const { email, password, name, church } = await req.json();
+  const { email, password, name, church, memberType } = await req.json();
 
-  if (!email || !password || !name || !church) {
+  if (!email || !password || !name || !church || !memberType) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
 
@@ -21,6 +21,7 @@ export async function POST(req: NextRequest) {
       name,
       passwordHash,
       church,
+      memberType,
       role: "PETITIONER",
     },
   });
