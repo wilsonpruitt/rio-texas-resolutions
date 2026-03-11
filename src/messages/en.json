@@ -261,7 +261,7 @@
     "accountExplanation": "Create an account so you can track your resolution's progress. If you already have an account, enter your email and password and click 'Existing Account'.",
     "name": "Full Name",
     "email": "Email",
-    "church": "Church (optional)",
+    "church": "Church",
     "password": "Password",
     "existingAccount": "Existing Account",
     "createAndContinue": "Create Account & Continue",

@@ -261,7 +261,7 @@
     "accountExplanation": "Cree una cuenta para poder rastrear el progreso de su resolución. Si ya tiene una cuenta, ingrese su correo y contraseña y haga clic en 'Cuenta Existente'.",
     "name": "Nombre Completo",
     "email": "Correo Electrónico",
-    "church": "Iglesia (opcional)",
+    "church": "Iglesia",
     "password": "Contraseña",
     "existingAccount": "Cuenta Existente",
     "createAndContinue": "Crear Cuenta y Continuar",

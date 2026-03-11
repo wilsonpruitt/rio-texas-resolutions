@@ -260,7 +260,7 @@ export default function SubmitPage() {
               </div>
               <div className="space-y-1">
                 <Label htmlFor="church">{t("submit.church")}</Label>
-                <Input id="church" value={church} onChange={(e) => setChurch(e.target.value)} />
+                <Input id="church" value={church} onChange={(e) => setChurch(e.target.value)} required />
               </div>
               <div className="space-y-1">
                 <Label htmlFor="password">{t("submit.password")}</Label>
@@ -274,7 +274,7 @@ export default function SubmitPage() {
                 <Button variant="outline" onClick={handleSignIn} disabled={loading || !email || !password}>
                   {t("submit.existingAccount")}
                 </Button>
-                <Button onClick={handleRegister} disabled={loading || !name || !email || !password}>
+                <Button onClick={handleRegister} disabled={loading || !name || !email || !church || !password}>
                   {loading ? "..." : t("submit.createAndContinue")}
                 </Button>
               </div>
