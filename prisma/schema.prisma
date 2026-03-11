@@ -1,0 +1,129 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Enums ──────────────────────────────────────────────────────────
+
+enum UserRole {
+  PETITIONER
+  COMMITTEE_CHAIR
+  SECRETARY
+  ADMIN
+}
+
+enum Locale {
+  EN
+  ES
+}
+
+enum ResolutionStatus {
+  DRAFT
+  SUBMITTED
+  UNDER_REVIEW
+  RECOMMENDED
+  NOT_RECOMMENDED
+  UT_REVIEW
+  APPROVED
+  NOT_ADVANCED
+}
+
+// ─── Models ─────────────────────────────────────────────────────────
+
+model User {
+  id              String   @id @default(cuid())
+  email           String   @unique
+  name            String
+  passwordHash    String
+  role            UserRole @default(PETITIONER)
+  preferredLocale Locale   @default(EN)
+  church          String?
+  createdAt       DateTime @default(now())
+
+  resolutions Resolution[]         @relation("Petitioner")
+  memberships CommitteeMembership[]
+}
+
+model Conference {
+  id       String    @id @default(cuid())
+  name     String
+  year     Int       @unique
+  isActive Boolean   @default(true)
+  date     DateTime?
+
+  resolutions Resolution[]
+}
+
+model Committee {
+  id           String @id @default(cuid())
+  name         String
+  abbreviation String @unique
+
+  memberships CommitteeMembership[]
+  resolutions Resolution[]
+}
+
+model CommitteeMembership {
+  id          String  @id @default(cuid())
+  userId      String
+  committeeId String
+  isChair     Boolean @default(false)
+
+  user      User      @relation(fields: [userId], references: [id])
+  committee Committee @relation(fields: [committeeId], references: [id])
+
+  @@unique([userId, committeeId])
+}
+
+model StandingRule {
+  id       String @id @default(cuid())
+  number   String @unique
+  title_en String
+  title_es String
+  text_en  String @db.Text
+  text_es  String @db.Text
+}
+
+model Resolution {
+  id            String           @id @default(cuid())
+  displayNumber String?          @unique
+  conferenceId  String
+  petitionerId  String
+  committeeId   String?
+  status        ResolutionStatus @default(DRAFT)
+
+  // Bilingual content
+  title_en     String?
+  title_es     String?
+  text_en      String? @db.Text
+  text_es      String? @db.Text
+  rationale_en String? @db.Text
+  rationale_es String? @db.Text
+
+  // Financial flag — auto-refers to Finance committee (FT)
+  hasFinancialImplications Boolean @default(false)
+  financeReferralNote      String? @db.Text
+
+  // Committee recommendation
+  recommendationText String?   @db.Text
+  recommendedAt      DateTime?
+
+  // Uniting Table decision
+  utDecisionText String?   @db.Text
+  utDecidedAt    DateTime?
+
+  // Final notes (for termination reason or approval notes)
+  finalExplanation String? @db.Text
+
+  submittedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  conference Conference @relation(fields: [conferenceId], references: [id])
+  petitioner User       @relation("Petitioner", fields: [petitionerId], references: [id])
+  committee  Committee? @relation(fields: [committeeId], references: [id])
+}
