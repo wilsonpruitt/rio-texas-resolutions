@@ -21,64 +21,44 @@ async function main() {
       petitionerId: delegate.id,
       status: "SUBMITTED",
       submittedAt: new Date(),
-      title_en: "Resolution Opposing Immigration Enforcement Actions on Church Property and Affirming Sanctuary Ministries",
-      title_es: "Resolución en Oposición a las Acciones de Cumplimiento Migratorio en Propiedad Eclesiástica y Afirmación de los Ministerios de Santuario",
-      text_en: `WHEREAS, The United Methodist Church affirms in the Book of Discipline ¶162.H that "we recognize, embrace, and affirm all persons, regardless of country of origin, as members of the family of God," and
+      title_en: "Resolution Honoring the Legacy of Black Methodist Clergy in Victoria, Texas",
+      title_es: "Resolución en Honor al Legado del Clero Metodista Negro en Victoria, Texas",
+      text_en: `WHEREAS, The roots of Black Methodism in Victoria, Texas reach back to the mid-nineteenth century, when freedmen and freedwomen gathered for worship and mutual support, and
 
-WHEREAS, Scripture commands us to welcome the stranger (Exodus 23:9, Leviticus 19:33-34), and the Holy Family themselves were refugees fleeing state violence (Matthew 2:13-15), and
+WHEREAS, Generations of Black Methodist clergy in the Victoria area have faithfully served their congregations, mentored young leaders, and strengthened the broader community through education, civic engagement, and compassionate ministry, and
 
-WHEREAS, Jesus taught that how we treat "the least of these"—the hungry, the stranger, the imprisoned—is how we treat Christ himself (Matthew 25:35-40), and
+WHEREAS, The contributions of these pastors and their congregations are an essential part of the story of Methodism in South Texas yet remain insufficiently documented and celebrated, and
 
-WHEREAS, Immigration and Customs Enforcement (ICE) operations in the Río Texas Conference area have created a climate of fear in our congregations and communities, separating families and disrupting the ministry of local churches, and
-
-WHEREAS, Many of our congregations include undocumented members and their families who live in daily fear of detention and deportation, and
-
-WHEREAS, The historic practice of church sanctuary has deep roots in both Christian tradition and American history as a prophetic witness against unjust laws,
+WHEREAS, The Río Texas Conference is enriched by the diverse heritage of all its member churches,
 
 THEREFORE BE IT RESOLVED, that the Río Texas Annual Conference:
 
-1. Affirms that all church properties within the Conference are sacred spaces where all persons should be free from fear of immigration enforcement;
+1. Recognizes and honors the enduring legacy of Black Methodist clergy and congregations in the Victoria area;
 
-2. Calls upon every local church to adopt a "Safe Church" policy stating that immigration enforcement agents will not be granted voluntary access to church property during worship, meetings, or ministry activities;
+2. Directs the Conference Commission on Archives and History to compile an oral history project documenting the experiences and contributions of Black Methodist leaders in Victoria;
 
-3. Directs the Conference Board of Church and Society to establish a Rapid Response Network to provide real-time notification and pastoral support when immigration enforcement actions occur in our communities;
+3. Encourages local churches in the Victoria district to host joint worship services and heritage celebrations that lift up this shared history;
 
-4. Allocates $50,000 from Conference reserves to establish an Immigration Legal Aid Fund providing direct legal assistance to immigrant families connected to our congregations;
+4. Requests the Bishop to issue a letter of commendation to the congregations that have sustained this witness across generations.`,
+      text_es: `POR CUANTO, Las raíces del metodismo negro en Victoria, Texas se remontan a mediados del siglo XIX, cuando hombres y mujeres liberados se reunían para adorar y apoyarse mutuamente, y
 
-5. Directs the Conference to partner with local legal aid organizations to train clergy and lay leaders in "Know Your Rights" education;
+POR CUANTO, Generaciones de clérigos metodistas negros en el área de Victoria han servido fielmente a sus congregaciones, formado jóvenes líderes y fortalecido la comunidad a través de la educación, la participación cívica y el ministerio compasivo, y
 
-6. Requests that the Bishop issue a pastoral letter to all congregations affirming the Conference's commitment to welcoming the stranger and opposing policies that separate families; and
+POR CUANTO, Las contribuciones de estos pastores y sus congregaciones son parte esencial de la historia del metodismo en el sur de Texas, pero permanecen insuficientemente documentadas y celebradas, y
 
-7. Instructs the Conference Secretary to communicate this resolution to the appropriate agencies of The United Methodist Church and to relevant civil authorities.`,
-      text_es: `POR CUANTO, La Iglesia Metodista Unida afirma en el Libro de Disciplina ¶162.H que "reconocemos, abrazamos y afirmamos a todas las personas, sin importar su país de origen, como miembros de la familia de Dios," y
-
-POR CUANTO, Las Escrituras nos mandan acoger al extranjero (Éxodo 23:9, Levítico 19:33-34), y la Sagrada Familia misma fueron refugiados huyendo de la violencia estatal (Mateo 2:13-15), y
-
-POR CUANTO, Jesús enseñó que cómo tratamos a "los más pequeños"—los hambrientos, los extranjeros, los encarcelados—es cómo tratamos a Cristo mismo (Mateo 25:35-40), y
-
-POR CUANTO, Las operaciones del Servicio de Inmigración y Control de Aduanas (ICE) en el área de la Conferencia Río Texas han creado un clima de miedo en nuestras congregaciones y comunidades, separando familias e interrumpiendo el ministerio de las iglesias locales, y
-
-POR CUANTO, Muchas de nuestras congregaciones incluyen miembros indocumentados y sus familias que viven con el temor diario de detención y deportación, y
-
-POR CUANTO, La práctica histórica del santuario eclesiástico tiene raíces profundas tanto en la tradición cristiana como en la historia estadounidense como un testimonio profético contra leyes injustas,
+POR CUANTO, La Conferencia Río Texas se enriquece por la herencia diversa de todas sus iglesias miembros,
 
 POR LO TANTO, SE RESUELVE que la Conferencia Anual Río Texas:
 
-1. Afirma que todas las propiedades eclesiásticas dentro de la Conferencia son espacios sagrados donde todas las personas deben estar libres del temor a la aplicación de leyes migratorias;
+1. Reconoce y honra el legado perdurable del clero y las congregaciones metodistas negras en el área de Victoria;
 
-2. Hace un llamado a cada iglesia local a adoptar una política de "Iglesia Segura" que establezca que los agentes de inmigración no tendrán acceso voluntario a la propiedad eclesiástica durante el culto, reuniones o actividades ministeriales;
+2. Ordena a la Comisión de Archivos e Historia compilar un proyecto de historia oral que documente las experiencias y contribuciones de líderes metodistas negros en Victoria;
 
-3. Ordena a la Junta de Iglesia y Sociedad de la Conferencia establecer una Red de Respuesta Rápida para proporcionar notificación en tiempo real y apoyo pastoral cuando ocurran acciones migratorias en nuestras comunidades;
+3. Alienta a las iglesias locales del distrito de Victoria a organizar servicios de adoración conjuntos y celebraciones del patrimonio;
 
-4. Asigna $50,000 de las reservas de la Conferencia para establecer un Fondo de Asistencia Legal Migratoria que proporcione asistencia legal directa a familias inmigrantes conectadas con nuestras congregaciones;
-
-5. Ordena a la Conferencia asociarse con organizaciones locales de asistencia legal para capacitar a clérigos y líderes laicos en educación de "Conozca Sus Derechos";
-
-6. Solicita que el Obispo/la Obispa emita una carta pastoral a todas las congregaciones afirmando el compromiso de la Conferencia con la acogida del extranjero y la oposición a políticas que separan familias; y
-
-7. Instruye al Secretario/a de la Conferencia a comunicar esta resolución a las agencias correspondientes de La Iglesia Metodista Unida y a las autoridades civiles pertinentes.`,
-      rationale_en: "This resolution is grounded in our Wesleyan tradition of social holiness and the scriptural mandate to welcome the stranger. The Río Texas Conference, situated along the U.S.-Mexico border region, has a unique calling to embody Christ's hospitality. As ICE enforcement actions intensify, our churches must provide both prophetic witness and practical support to vulnerable members of our community.",
-      rationale_es: "Esta resolución se fundamenta en nuestra tradición wesleyana de santidad social y el mandato bíblico de acoger al extranjero. La Conferencia Río Texas, situada en la región fronteriza entre Estados Unidos y México, tiene un llamado único para encarnar la hospitalidad de Cristo. A medida que se intensifican las acciones de cumplimiento migratorio, nuestras iglesias deben proporcionar tanto testimonio profético como apoyo práctico a los miembros vulnerables de nuestra comunidad.",
+4. Solicita al Obispo/a emitir una carta de reconocimiento a las congregaciones que han sostenido este testimonio a lo largo de generaciones.`,
+      rationale_en: "Preserving and celebrating the history of Black Methodism in Victoria strengthens our collective identity and honors those whose faithful service built the foundation we stand on today.",
+      rationale_es: "Preservar y celebrar la historia del metodismo negro en Victoria fortalece nuestra identidad colectiva y honra a quienes con su servicio fiel construyeron los cimientos sobre los que nos encontramos hoy.",
     },
   });
 
