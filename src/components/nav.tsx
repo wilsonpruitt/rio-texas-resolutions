@@ -13,6 +13,7 @@ export function Nav() {
 
   const user = session?.user;
   const isAuth = !!user;
+  const isAdmin = (user as { role?: string } | undefined)?.role === "ADMIN";
 
   return (
     <header className="border-b bg-background">
@@ -36,6 +37,14 @@ export function Nav() {
               >
                 {t("resolutions")}
               </Link>
+              {isAdmin && (
+                <Link
+                  href={`/${locale}/admin/users`}
+                  className="text-sm text-muted-foreground hover:text-foreground"
+                >
+                  {t("users")}
+                </Link>
+              )}
             </>
           )}
 
